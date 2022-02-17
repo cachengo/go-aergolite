@@ -10,6 +10,17 @@
 package sqlite3
 
 /*
+#cgo CFLAGS: -DUSE_LIBSQLITE3
+#cgo linux LDFLAGS: -L/usr/local/lib -laergolite
+#cgo darwin LDFLAGS: -L/usr/local/lib -laergolite
+#cgo openbsd LDFLAGS: -L/usr/local/lib -laergolite
+#cgo solaris LDFLAGS: -L/usr/local/lib -laergolite
+#cgo windows LDFLAGS: -laergolite
+#cgo linux CFLAGS: -I/usr/local/include
+#cgo darwin CFLAGS: -I/usr/local/include
+#cgo openbsd CFLAGS: -I/usr/local/include
+#cgo solaris CFLAGS: -I/usr/local/include
+
 #cgo CFLAGS: -std=gnu99
 #cgo CFLAGS: -DSQLITE_ENABLE_RTREE
 #cgo CFLAGS: -DSQLITE_THREADSAFE=1
@@ -22,13 +33,8 @@ package sqlite3
 #cgo CFLAGS: -DSQLITE_ENABLE_UPDATE_DELETE_LIMIT
 #cgo CFLAGS: -Wno-deprecated-declarations
 #cgo linux,!android CFLAGS: -DHAVE_PREAD64=1 -DHAVE_PWRITE64=1
-#cgo openbsd CFLAGS: -I/usr/local/include
-#cgo openbsd LDFLAGS: -L/usr/local/lib
-#ifndef USE_LIBSQLITE3
-#include "sqlite3-binding.h"
-#else
+
 #include <sqlite3.h>
-#endif
 #include <stdlib.h>
 #include <string.h>
 
