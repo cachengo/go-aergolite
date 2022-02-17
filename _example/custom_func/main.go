@@ -7,7 +7,7 @@ import (
 	"math"
 	"math/rand"
 
-	sqlite "github.com/mattn/go-sqlite3"
+	sqlite "github.com/cachengo/go-aergolite"
 )
 
 // Computes x^y

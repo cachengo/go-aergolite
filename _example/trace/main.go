@@ -6,7 +6,7 @@ import (
 	"log"
 	"os"
 
-	sqlite3 "github.com/mattn/go-sqlite3"
+	sqlite3 "github.com/cachengo/go-aergolite"
 )
 
 func traceCallback(info sqlite3.TraceInfo) int {

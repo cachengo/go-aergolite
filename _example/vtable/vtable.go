@@ -5,8 +5,6 @@ import (
 	"fmt"
 	"io/ioutil"
 	"net/http"
-
-	"github.com/mattn/go-sqlite3"
 )
 
 type githubRepo struct {
